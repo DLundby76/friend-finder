@@ -2,7 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
 
-var htmlRouter = require('./app/routes/htmlRoutes')
+var htmlRouter = require('./app/routing/htmlRoutes')
 // create out express instance
 var app = express();
 
