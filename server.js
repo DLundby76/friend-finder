@@ -10,6 +10,9 @@ var app = express();
 
 var port = process.env.PORT || 3000;
 
+  app.use(bodyParser.json());
+
+
 app.use(express.static(path.join(__dirname, 'app/public')));
 app.use('/', htmlRouter);
 
