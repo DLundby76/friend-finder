@@ -13,10 +13,18 @@ router.get('/survey', (req, res)=>{
 });
 
 router.post('/survey', (req, res)=>{
-    console.log(req.body);
-  res.sendFile(path.join(__dirname, '../public/survey.html'));
+  var total = 0;
+  var keys = Object.keys(req.body);
+  for (var i = 0; i < keys.length; i++) {
+    total += Number(req.body[keys[i]]);
+  }
+  if (total > 35){
+    res.sendFile(path.join(__dirname, '../public/you-like-me.html'));
+  }
+  else {
+    res.sendFile(path.join(__dirname, '../public/dont-like-me.html'));
 
-
+  }
 });
 
 module.exports = router;
